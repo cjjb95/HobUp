@@ -1,10 +1,10 @@
 <widget xmlns = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-        id = "ie.dkit.derek.splash">
+        id = "com.Fortuna.HobUp">
 
 <name>HobUp</name>
 <description>Hobup is a meeting hub for hobbyists where they can tutor and discover new hobbies in the virtual world or in real life</description>
-<author email="cjjb95@gmail.com" href="http://derek.dkit.ie">Team Fortuna</author>
+<author email="cjjb95@gmail.com" href="HobUp">Team Fortuna</author>
 
 <icon platform="android" qualifier="ldpi" src="res/icons/android/icon-36-ldpi.png"/>
 <icon platform="android" qualifier="mdpi" src="res/icons/android/icon-48-mdpi.png"/>
@@ -12,4 +12,5 @@
 <icon platform="android" qualifier="xhdpi" src="res/icons/android/icon-96-xhdpi.png"/>
 <icon platform="android" qualifier="xxhdpi" src="res/icons/android/icon-144-xxhdpi.png"/>
 <icon platform="android" qualifier="xxxhdpi" src="res/icons/android/icon-192-xxxhdpi.png"/>
+
 </widget>

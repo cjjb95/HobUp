@@ -1,10 +1,12 @@
+<!DOCTYPE html>
 <html>
     <head>
-        <title>TODO supply a title</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Device Type Example</title>
+        <!-- This is needed to access the PhoneGap JavaScript -->
         <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-        <script>
+        <script type="text/javascript">
             window.onload = onAllAssetsLoaded;
             document.write("<div id='loadingMessage'>Loading...</div>");
             function onAllAssetsLoaded()
@@ -20,13 +22,16 @@
                 // hide the webpage loading message
                 document.getElementById('loadingMessage').style.visibility = "hidden";
 
-                document.getElementById('message').innerHTML = 'Device Ready';
+                // get the device type
+                var deviceType = (navigator.userAgent.match(/Android/i)) == "Android" ? "Android"
+                        : (navigator.userAgent.match(/BlackBerry/i)) == "BlackBerry" ? "BlackBerry" : "null";
+
+                document.getElementById("device_type").innerHTML = "<H1>Device</h1><p>" + deviceType + "</p>";
             }
         </script>
-    </head> 
+    </head>
 
-    <body> 
-        <h1>Device Ready Demo</h1>
-        <p id = 'message'></p>
+    <body>
+        <div id = "device_type"></div>
     </body>
 </html>

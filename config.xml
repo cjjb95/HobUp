@@ -1,0 +1,10 @@
+<widget xmlns     = "http://www.w3.org/ns/widgets"
+        xmlns:gap = "http://phonegap.com/ns/1.0"
+        id = "ie.Hobup">
+
+
+<name>HobUp App</name>
+<description>A minimal phonegap demo</description>
+<author email="cjjb95@gmail.ie" href="http://Hobup.ie">Team Fortuna</author>
+
+</widget>

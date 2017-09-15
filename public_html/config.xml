@@ -15,5 +15,12 @@
 <icon platform="android" qualifier="xxhdpi" src="res/icons/android/xxhdpi.png"/>
 <icon platform="android" qualifier="xxxhdpi" src="res/icons/android/xxxhdpi.png"/>
 
+<icon platform="android" qualifier="ldpi" src="res/icons/android/splash-port-ldpi.png"/>
+<icon platform="android" qualifier="mdpi" src="res/icons/android/splash-port-48-mdpi.png"/>
+<icon platform="android" qualifier="hdpi" src="res/icons/android/splash-port-hdpi.png"/>
+<icon platform="android" qualifier="xhdpi" src="res/icons/android/splash-port-xhdpi.png"/>
+<icon platform="android" qualifier="xxhdpi" src="res/icons/android/splash-port-xxhdpi.png"/>
+<icon platform="android" qualifier="xxxhdpi" src="res/icons/android/splash-port-xxxhdpi.png"/>
+
 <!--<preference name = "orientation" value = "portrait" />-->
 </widget>

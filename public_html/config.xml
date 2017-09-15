@@ -8,9 +8,9 @@
 <description>Hobup is a meeting hub for hobbyists where they can tutor and discover new hobbies in the virtual world or in real life</description>
 <author email="cjjb95@gmail.com" href="HobUp">Team Fortuna</author>
 
+<icon platform="android" qualifier="hdpi" src="res/icons/android/icon-72-hdpi.png"/>
 <icon platform="android" qualifier="ldpi" src="res/icons/android/icon-36-ldpi.png"/>
 <icon platform="android" qualifier="mdpi" src="res/icons/android/icon-48-mdpi.png"/>
-<icon platform="android" qualifier="hdpi" src="res/icons/android/icon-72-hdpi.png"/>
 <icon platform="android" qualifier="xhdpi" src="res/icons/android/icon-96-xhdpi.png"/>
 <icon platform="android" qualifier="xxhdpi" src="res/icons/android/icon-144-xxhdpi.png"/>
 <icon platform="android" qualifier="xxxhdpi" src="res/icons/android/icon-192-xxxhdpi.png"/>

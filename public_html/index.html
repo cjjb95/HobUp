@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
-    <head>
+    <head> 
+
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Device Type Example</title>
         <!-- This is needed to access the PhoneGap JavaScript -->
         <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+
         <script type="text/javascript">
             window.onload = onAllAssetsLoaded;
             document.write("<div id='loadingMessage'>Loading...</div>");
@@ -16,7 +17,7 @@
             }
 
 
-        // Cordova is ready to be used!
+            // Cordova is ready to be used!
             function onDeviceReady()
             {
                 // hide the webpage loading message
@@ -29,9 +30,115 @@
                 document.getElementById("device_type").innerHTML = "<H1>Device</h1><p>" + deviceType + "</p>";
             }
         </script>
+
+        <title>Device Type Example</title>
+        <style>
+            #controlPanel 
+            {
+                float:left;
+                width:49%;
+            }
+
+            #mapDiv 
+            {
+                width:49%;
+                height:600px;
+                float:right;
+                border:thin solid #CCC;
+            }
+
+            #directions
+            {
+                float:left;
+                width:100%;
+                margin:0px;
+            }
+
+            button
+            {	
+                margin:5px;
+            }
+
+        </style>
+        <!-- Google Maps -->
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD3GNUNqilg3CdYIedKxEY5zgCl4p7xp-4"></script>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script>
+                    var currentLocationMap;
+                    var directionsDisplay;
+                    var directionsService;
+                    var currentLocationMap;
+
+                    function init()
+                    {
+                        directionsService = new google.maps.DirectionsService();
+                        // route planner
+                        directionsDisplay = new google.maps.DirectionsRenderer();
+                        var currentLocationMap = new google.maps.LatLng(54, -6.3);  // DkIT
+
+                        var mapOptions = {zoom: 10, center: currentLocationMap};
+                        currentLocationMap = new google.maps.Map(document.getElementById('mapDiv'), mapOptions);
+                        directionsDisplay.setMap(currentLocationMap);
+
+                        // add directions to the route
+                        directionsDisplay.setPanel(document.getElementById('directions'));
+                    }
+
+                    var travelMode = "DRIVING";
+                    function calculateRoute()
+                    {
+
+                        var start = document.getElementById('start').value;
+                        var end = document.getElementById('end').value;
+
+                        var request = {origin: start,
+                            destination: end,
+                            travelMode: google.maps.TravelMode[travelMode]};
+
+                        directionsService.route(request, function (response, status)
+                        {
+                            if (status == google.maps.DirectionsStatus.OK)
+                            {
+                                directionsDisplay.setDirections(response);
+                            }
+                        });
+                    }
+        </script>
     </head>
 
-    <body>
+    <body onload='init()'>
+        <div id="controlPanel">
+            <b>Start:</b>
+            <select id="start">
+                <option value="Dundalk Institute of Technology Louth Ireland">DkIT</option>
+                <option value="Dublin City University Collins Avenue Extension Whitehall Dublin 9">DCU</option>
+                <option value="Maynooth University Ireland">Maynooth</option>
+            </select>
+
+            <br>
+            <b>End: </b>
+            <select id="end">
+                <option value="Dundalk Institute of Technology Louth Ireland">DkIT</option>
+                <option value="Dublin City University Collins Avenue Extension Whitehall Dublin 9">DCU</option>
+                <option value="Maynooth University Ireland">Maynooth</option>
+            </select>
+            &nbsp;
+            <button onclick='calculateRoute()'>Submit</button>
+            <br><br>
+            <button><i class="material-icons" onclick="travelMode = 'Driving';calculateRoute()">directions_car</i></button>
+            <button><i class="material-icons" onclick="travelMode = 'Transit';calculateRoute()">directions_bus</i></button>
+            <button><i class="material-icons" onclick="travelMode = 'Bike';calculateRoute()">directions_bike</i></button>
+            <button><i class="material-icons" onclick="travelMode = 'Walk';calculateRoute()">directions_walk</i></button>
+
+
+            <br>
+            <br>
+            <br>
+            <div id="directions"></div>
+        </div>
+
+        <div id="mapDiv"></div>       
         <div id = "device_type"></div>
+
     </body>
 </html>
